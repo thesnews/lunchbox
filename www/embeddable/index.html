@@ -9,12 +9,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="http://media.npr.org/favicon.ico" />
+<link rel="shortcut icon" href="http://cdn.thesn.net/20151007QJgFVV_Dcg/dist/img/favicons/favicon.ico" />
 
     <!-- FONTS -->
     <!-- Fonts -->
 
-<script type="text/javascript" src="../js/webfont.min.js?1441222429"></script>
+<script type="text/javascript" src="../js/webfont.min.js?1444249406"></script>
 <script>
 	// Define your web fonts here.
 	// See https://github.com/typekit/webfontloader for documentation
@@ -22,10 +22,10 @@
 
     <!-- CSS -->
     
-    <link rel="stylesheet" type="text/css" href="../css/app.min.css?1441222430" />
+    <link rel="stylesheet" type="text/css" href="../css/app.min.css?1444249406" />
     
 
-<link rel="stylesheet" type="text/css" href="../css/embeddable.min.css?1441222430" />
+<link rel="stylesheet" type="text/css" href="../css/embeddable.min.css?1444249407" />
 
 
     
@@ -56,6 +56,7 @@
             
 <div class="wrapper">
     <div class="canvas-wrapper">
+        <p>Copy and paste this code into a Safe Embed</p>
         <div class="canvas-cell">
             <textarea class="form-control" readonly rows="20" id="embeddable-output"></textarea>
         </div>
@@ -69,7 +70,7 @@
                     <select class="form-control embeddable-type">
                         <option value="quote">Pull Quote</option>
                         <option value="poll">Poll</option>
-                        <option value="media-side">Media (Side-bar)</option>
+                        <option value="media-side">Media (Sidebar)</option>
                         <option value="random">Rando HTML</option>
                     </select>
                 </div>
@@ -89,7 +90,7 @@
                     <div class="form-group">
                         <label class="control-label">Poll ID</label>
                         <input type="text" class="form-control" id="poll-id" />
-                        <p class="help-block">Grab the poll ID by opening the poll in Gryphon and copying the last part of the URL</p>
+                        <p class="help-block">Grab the poll ID by opening the poll in Gryphon and copying the number at the end of the URL</p>
                     </div>
                 </div>
 
@@ -97,11 +98,17 @@
                     <div class="form-group">
                         <label class="control-label">Media Link URL</label>
                         <input type="text" class="form-control" id="media-side-url" />
-                        <p class="help-block">The preview URL for the media file</p>
+                        <p class="help-block">Upload your photo to Gryphon. Then open it and click View > Preview File. Copy/paste that URL here.</p>
                     </div>
                     <div class="form-group">
                         <label class="control-label">Media Cutline</label>
                         <input type="text" class="form-control" id="media-side-cutline" />
+                        <p class="help-block">Enter a short description or promo here</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Clickthrough URL for Image and Cutline</label>
+                        <input type="text" class="form-control" id="media-side-clickthrough" />
+                        <p class="help-block">Enter the URL the image and cutline should click to</p>
                     </div>
                 </div>
 
@@ -138,9 +145,8 @@
 
 <script type="embeddable-template" id="media-side-template">
 <div class="article-embed gallery-embed">
-    <img src="%url%">
-    <span>%cutline%</span>
-    <span class="click-through">View >> </span>
+    <a href="%clickthrough%"><img src="%url%"></a>
+    <span><a href="%clickthrough%">%cutline%</a></span>
 </div>
 </script>
 
@@ -160,21 +166,19 @@
 
     
 
-<script type="text/javascript">
-    window.$ = window.jQuery = require('../js/lib/jquery.js')
-</script>
+
 
 
     
     
     
     
-    <script type="text/javascript" src="../js/app-footer.min.js?1441222431"></script>
+    <script type="text/javascript" src="../js/app-footer.min.js?1444249407"></script>
 
     
 
 
-<script type="text/javascript" src="../js/embeddable.min.js?1441222431"></script>
+<script type="text/javascript" src="../js/embeddable.min.js?1444249409"></script>
 
 
     

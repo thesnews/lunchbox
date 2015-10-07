@@ -15,7 +15,7 @@ NAMES
 """
 # Project name to be used in urls
 # Use dashes, not underscores!
-PROJECT_SLUG = 'tsn-lunchbox'
+PROJECT_SLUG = 'lunchbox'
 
 # Project name to be used in file paths
 PROJECT_FILENAME = 'TSNLunchbox'
@@ -31,8 +31,8 @@ DEV_CONTACT = 'support@getsnworks.com'
 """
 DEPLOYMENT
 """
-PRODUCTION_S3_BUCKET = 'static.getsnworks.com/lunchbox'
-STAGING_S3_BUCKET = 'static.getsnworks.com/lunchbox'
+PRODUCTION_S3_BUCKET = 'static.getsnworks.com'
+STAGING_S3_BUCKET = 'static.getsnworks.com'
 DEFAULT_MAX_AGE = 20
 
 FILE_SERVER_USER = 'ubuntu'
