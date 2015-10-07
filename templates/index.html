@@ -11,28 +11,34 @@
 {% block content %}
 <div class="container">
 
-    <div class="poster-wrapper col-sm-4">
+    <div class="poster-wrapper col-sm-3">
         <a href="quotable/index.html"><img src="img/icon-quotable.svg" height="150" width="150"alt="Quotable" />
         <h3>Quotable</h3></a>
         <p>Converts quoted text into a branded image</p>
     </div>
 
-    <div class="poster-wrapper col-sm-4">
+    <div class="poster-wrapper col-sm-3">
         <a href="factlist/index.html"><img src="img/icon-factlist.svg" height="150" width="150" alt="Factlist" />
         <h3>Factlist</h3></a>
         <p>Produces a branded image with a list of facts
             <i>(Example: Breaking news updates)</i></p>
     </div>
 
-    <div class="poster-wrapper col-sm-4">
+    <div class="poster-wrapper col-sm-3">
         <a href="waterbug/index.html"><img src="img/icon-waterbug.svg" height="150" width="150"alt="Waterbug" />
         <h3>Waterbug</h3></a>
         <p>Creates a watermarked image with attribution</p>
     </div>
 
+    <div class="poster-wrapper col-sm-3">
+        <a href="embeddable/index.html"><img src="img/icon-quotable.svg" height="150" width="150"alt="Waterbug" />
+        <h3>Embeddable</h3></a>
+        <p>Generate embeddable article tags</p>
+    </div>
+
     <div class="row">
       <div class="col-md-12 poster-wrapper"><br><br><br><br><br><br><br>
-        <p>Last updated on {{ now }} | Contact {{ DEV_CONTACT }} with questions.</p>
+        <p>Last updated on {{ now }} | Contact <a href="{{ DEV_CONTACT }}">{{ DEV_CONTACT }}</a> with questions.</p>
       </div>
     </div>
 

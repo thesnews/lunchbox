@@ -1,0 +1,131 @@
+{% extends '_base.html' %}
+
+{% block extra_css %}
+{{ CSS.push('less/embeddable.less') }}
+{{ CSS.render('css/embeddable.min.css') }}
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="canvas-wrapper">
+        <p>Copy and paste this code into a Safe Embed</p>
+        <div class="canvas-cell">
+            <textarea class="form-control" readonly rows="20" id="embeddable-output"></textarea>
+        </div>
+    </div>
+    <div class="form controls">
+        <div class="controls-wrapper">
+            <form autocomplete="off" id="embeddable-form">
+
+                <div class="form-group">
+                    <label class="control-label">Embeddable Type</label>
+                    <select class="form-control embeddable-type">
+                        <option value="quote">Pull Quote</option>
+                        <option value="poll">Poll</option>
+                        <option value="media-side">Media (Sidebar)</option>
+                        <option value="random">Rando HTML</option>
+                    </select>
+                </div>
+
+                <div class="quote-container hidden">
+                    <div class="form-group">
+                        <label class="control-label">Quote Text</label>
+                        <textarea rows="5" cols="20" class="form-control" id="quote-quote"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Quote Atribution</label>
+                        <input type="text" class="form-control" id="quote-atribution" />
+                    </div>
+                </div>
+
+                <div class="form-group poll-container hidden">
+                    <div class="form-group">
+                        <label class="control-label">Poll ID</label>
+                        <input type="text" class="form-control" id="poll-id" />
+                        <p class="help-block">Grab the poll ID by opening the poll in Gryphon and copying the number at the end of the URL</p>
+                    </div>
+                </div>
+
+                <div class="form-group media-side-container hidden">
+                    <div class="form-group">
+                        <label class="control-label">Media Link URL</label>
+                        <input type="text" class="form-control" id="media-side-url" />
+                        <p class="help-block">Upload your photo to Gryphon. Then open it and click View > Preview File. Copy/paste that URL here.</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Media Cutline</label>
+                        <input type="text" class="form-control" id="media-side-cutline" />
+                        <p class="help-block">Enter a short description or promo here</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Clickthrough URL for Image and Cutline</label>
+                        <input type="text" class="form-control" id="media-side-clickthrough" />
+                        <p class="help-block">Enter the URL the image and cutline should click to</p>
+                    </div>
+                </div>
+
+                <!-- <div class="form-group media-full-container hidden">
+                    media-full
+                </div> -->
+
+                <div class="form-group random-container hidden">
+                    <div class="form-group">
+                        <label class="control-label">Embed HTML</label>
+                        <textarea rows="5" cols="20" class="form-control" id="random-content"></textarea>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="embeddable-template" id="quote-template">
+<div class="article-embed pull-quote">
+    <span class="pull-quote-body">"%quote%"</span>
+    <hr>
+    <span class="pull-quote-byline">%attribution%</span>
+</div>
+</script>
+
+<script type="embeddable-template" id="poll-template">
+<div class="article-embed opinion-box">
+    [script "http://statenews.com/poll/embed.js?id=%id%"]
+    <div id="gpoll-%id%" data-poll="%id%"></div>
+</div>
+</script>
+
+<script type="embeddable-template" id="media-side-template">
+<div class="article-embed gallery-embed">
+    <a href="%clickthrough%"><img src="%url%"></a>
+    <span><a href="%clickthrough%">%cutline%</a></span>
+</div>
+</script>
+
+<script type="embeddable-template" id="random-template">
+<div class="article-embed">
+    %content%
+</div>
+</script>
+
+{% endblock %}
+
+
+{% block wide_content %}
+{% endblock %}
+
+{% block jquery %}
+{% if DEPLOYMENT_TARGET == 'electron' %}
+<script type="text/javascript">
+    window.$ = window.jQuery = require('../js/lib/jquery.js')
+</script>
+{% else %}
+{{ JS.push('js/lib/jquery.js') }}
+{% endif %}
+{% endblock jquery %}
+
+{% block extra_foot_js %}
+{{ JS.push('js/lib/bootstrap.js') }}
+{{ JS.push('js/embeddable.js') }}
+{{ JS.render('js/embeddable.min.js') }}
+{% endblock extra_foot_js %}

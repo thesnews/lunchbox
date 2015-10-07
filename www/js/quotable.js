@@ -133,9 +133,9 @@ $(function() {
     $logoWrapper = $('.logo-wrapper');
 
     var quote = quotes[Math.floor(Math.random()*quotes.length)];
-    if (quote.size){
-        adjustFontSize(quote.size);
-    }
+    adjustFontSize(32);
+    $fontSize.val(32);
+
     $('blockquote p').text(quote.quote);
     $source.html('&mdash;&thinsp;' + quote.source);
     processText();

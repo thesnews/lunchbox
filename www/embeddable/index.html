@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lunchbox</title>
+
+    <!-- META TAGS -->
+    <meta name="description" content="tktktk">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://media.npr.org/favicon.ico" />
+
+    <!-- FONTS -->
+    <!-- Fonts -->
+
+<script type="text/javascript" src="../js/webfont.min.js?1441222429"></script>
+<script>
+	// Define your web fonts here.
+	// See https://github.com/typekit/webfontloader for documentation
+</script>
+
+    <!-- CSS -->
+    
+    <link rel="stylesheet" type="text/css" href="../css/app.min.css?1441222430" />
+    
+
+<link rel="stylesheet" type="text/css" href="../css/embeddable.min.css?1441222430" />
+
+
+    
+    
+</head>
+<body class="embeddable">
+    <a class="sr-only" href="#content">Skip To Content</a>
+
+    
+
+    
+    <header>
+        <div class="nav-links">
+            <a href="../quotable/index.html" >Quotable</a>
+            <a href="../factlist/index.html" >Factlist</a>
+            <a href="../waterbug/index.html" >Waterbug</a>
+            <a href="../embeddable/index.html"  class="active" >Embeddable</a>
+        </div>
+
+        <a href="../index.html" class="home-link">
+            <h1>Lunchbox</h1>
+        </a>
+    </header>
+    
+
+    <section id="content">
+        <div class="container-fluid">
+            
+<div class="wrapper">
+    <div class="canvas-wrapper">
+        <div class="canvas-cell">
+            <textarea class="form-control" readonly rows="20" id="embeddable-output"></textarea>
+        </div>
+    </div>
+    <div class="form controls">
+        <div class="controls-wrapper">
+            <form autocomplete="off" id="embeddable-form">
+
+                <div class="form-group">
+                    <label class="control-label">Embeddable Type</label>
+                    <select class="form-control embeddable-type">
+                        <option value="quote">Pull Quote</option>
+                        <option value="poll">Poll</option>
+                        <option value="media-side">Media (Side-bar)</option>
+                        <option value="random">Rando HTML</option>
+                    </select>
+                </div>
+
+                <div class="quote-container hidden">
+                    <div class="form-group">
+                        <label class="control-label">Quote Text</label>
+                        <textarea rows="5" cols="20" class="form-control" id="quote-quote"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Quote Atribution</label>
+                        <input type="text" class="form-control" id="quote-atribution" />
+                    </div>
+                </div>
+
+                <div class="form-group poll-container hidden">
+                    <div class="form-group">
+                        <label class="control-label">Poll ID</label>
+                        <input type="text" class="form-control" id="poll-id" />
+                        <p class="help-block">Grab the poll ID by opening the poll in Gryphon and copying the last part of the URL</p>
+                    </div>
+                </div>
+
+                <div class="form-group media-side-container hidden">
+                    <div class="form-group">
+                        <label class="control-label">Media Link URL</label>
+                        <input type="text" class="form-control" id="media-side-url" />
+                        <p class="help-block">The preview URL for the media file</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Media Cutline</label>
+                        <input type="text" class="form-control" id="media-side-cutline" />
+                    </div>
+                </div>
+
+                <!-- <div class="form-group media-full-container hidden">
+                    media-full
+                </div> -->
+
+                <div class="form-group random-container hidden">
+                    <div class="form-group">
+                        <label class="control-label">Embed HTML</label>
+                        <textarea rows="5" cols="20" class="form-control" id="random-content"></textarea>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="embeddable-template" id="quote-template">
+<div class="article-embed pull-quote">
+    <span class="pull-quote-body">"%quote%"</span>
+    <hr>
+    <span class="pull-quote-byline">%attribution%</span>
+</div>
+</script>
+
+<script type="embeddable-template" id="poll-template">
+<div class="article-embed opinion-box">
+    [script "http://statenews.com/poll/embed.js?id=%id%"]
+    <div id="gpoll-%id%" data-poll="%id%"></div>
+</div>
+</script>
+
+<script type="embeddable-template" id="media-side-template">
+<div class="article-embed gallery-embed">
+    <img src="%url%">
+    <span>%cutline%</span>
+    <span class="click-through">View >> </span>
+</div>
+</script>
+
+<script type="embeddable-template" id="random-template">
+<div class="article-embed">
+    %content%
+</div>
+</script>
+
+
+            
+
+        </div>
+    </section>
+
+    
+
+    
+
+<script type="text/javascript">
+    window.$ = window.jQuery = require('../js/lib/jquery.js')
+</script>
+
+
+    
+    
+    
+    
+    <script type="text/javascript" src="../js/app-footer.min.js?1441222431"></script>
+
+    
+
+
+<script type="text/javascript" src="../js/embeddable.min.js?1441222431"></script>
+
+
+    
+    
+</body>
+</html>

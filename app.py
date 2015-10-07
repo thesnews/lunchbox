@@ -56,6 +56,13 @@ def waterbug():
     context['id'] = context['name']
     return make_response(render_template('waterbug.html', **context))
 
+@app.route('/embeddable/index.html')
+def embeddable():
+    context = make_context()
+    context['name'] = 'Embeddable'
+    context['id'] = context['name']
+    return make_response(render_template('embeddable.html', **context))
+
 app.register_blueprint(static.static)
 
 # Enable Werkzeug debug pages
